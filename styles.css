@@ -1,0 +1,40 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    line-height: 70px;
+    height: 70px;
+    background-color: #0165E1;
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+
+button {
+    height: 40px;
+    width: 100px;
+    margin-right: 50px;
+    margin-left: 20px;
+    border: none;
+    border-radius: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    border: black 0.5px solid;
+}
+
+.fa-s, .fa-f, .fa-bolt {
+   font-size: 30px;
+}
+
+.fa-s {
+    color:#0165E1;
+}
+
+.fa-f {
+    color: grey;
+}
+
