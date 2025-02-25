@@ -4,16 +4,31 @@ html, body {
 }
 
 header {
-    line-height: 70px;
-    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Keeps the button on the left */
+    height: 75px;
     background-color: #0165E1;
-    padding: 0; 
+    padding: 0;
     box-sizing: border-box;
+    width: 70%;
+    margin: 0 auto;
+    border-radius: 10px;
 }
 
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+    font-weight: bold;
+    color: white; /* Optional for visibility */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
 
 button {
-    height: 40px;
+    height: 50px;
     width: 100px;
     margin-right: 50px;
     margin-left: 20px;
@@ -26,15 +41,28 @@ button:hover {
     border: black 0.5px solid;
 }
 
-.fa-s, .fa-f, .fa-bolt {
+.fa-s, .fa-c, .fa-truck-fast {
    font-size: 30px;
+   -webkit-text-stroke: 0.5px black;
+}
+
+.fa-c {
+    vertical-align: -5px;
+    position: relative;
+    top: 3px;
 }
 
 .fa-s {
     color:#0165E1;
 }
 
-.fa-f {
+.fa-c {
     color: grey;
 }
+
+.fa-truck-fast {
+    color: gold;
+    -webkit-text-stroke: 2px black;
+}
+
 
