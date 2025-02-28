@@ -1,0 +1,26 @@
+.selections {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    background-color: lightgrey;
+    width: 50%;
+    margin: 0 auto;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: center;
+}
+
+.category {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+}
+
+.category li {
+    margin-right: 20px;
+    font-size: 25px;
+    font-family: 'Oswald';
+}
