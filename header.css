@@ -115,11 +115,3 @@ header {
     cursor: pointer;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: #0165E1;
-}
