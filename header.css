@@ -115,3 +115,26 @@ header {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 600px)
+{
+    header {
+        width: 95%;
+    }
+
+    .title {
+        font-size: 35px;
+    }
+
+    .logo {
+       height: 70px;
+       width: 50px;
+    }
+
+    .fa-s, .fa-c, .fa-truck-fast {
+        font-size: 27px;
+     }
+
+     .fa-c {
+        top: 1px;
+     }
+}
