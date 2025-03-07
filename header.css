@@ -78,7 +78,6 @@ header {
 
 .cart {
     position: relative;
-    font-size: 30px;
 }
 
 .cart-button:hover {
@@ -122,19 +121,50 @@ header {
     }
 
     .title {
-        font-size: 35px;
+        font-size: 30px;
+        text-align: center;
     }
 
+   .fast-1 {
+       position: relative;
+       left: 90px;
+    }
+
+    .fast-2 {
+        position: relative;
+        right: 90px;
+    }
+
+   
+
     .logo {
-       height: 70px;
-       width: 50px;
+        height: 40px;
+        width: 80px;
     }
 
     .fa-s, .fa-c, .fa-truck-fast {
-        font-size: 27px;
+        font-size: 20px;
      }
 
      .fa-c {
         top: 1px;
      }
-}
+
+     .fa-cart-shopping {
+        font-size: 50px;
+     }
+
+     .cart-indicator {
+        top: -20px;
+        font-size: 20px;
+     }
+
+     .cart-badge {
+        top: -10px;
+        left: 45px;
+        font-size: 17px;
+        width: 25px;
+        height: 25px;
+     }
+
+    }
