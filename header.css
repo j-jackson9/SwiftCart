@@ -121,21 +121,26 @@ header {
     }
 
     .title {
+        display: flex;
+        margin-left: 11px;
+        align-items: center;
+    }
+    .swift {
         font-size: 30px;
         text-align: center;
     }
 
    .fast-1 {
        position: relative;
-       left: 90px;
+       left: 18px;
+       font-size: 45px;
     }
 
     .fast-2 {
         position: relative;
-        right: 90px;
+        right: 19px;
+        font-size: 45px;
     }
-
-   
 
     .logo {
         height: 40px;
@@ -166,5 +171,7 @@ header {
         width: 25px;
         height: 25px;
      }
+
+     
 
     }
