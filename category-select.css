@@ -35,6 +35,10 @@ a:hover {
     color: #0165E1;
 }
 
+.category-select {
+    display: none;
+}
+
 
 @media only screen and (max-width: 600px)
 {
@@ -42,14 +46,28 @@ a:hover {
         width: 80%;
     }
 
-    .selectiosn:hover {
-        display: drop-down;
+    .category {
+        display: none !important;
+        font-size: 30px;
     }
 
-    .category {
-        display: none;
+    .category-select {
+        display: flex;
+        position: absolute;
+        top: 83px;
+        left: 74px;
+        justify-content: center;
+        align-items: center;
         font-size: 30px;
+        font-family: 'Oswald';
+        border-radius: 25px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+        border: none;
+        padding: 5px;
+    }
 
+    h1 {
+        font-size: 60px !important;
     }
 
 }
