@@ -40,7 +40,7 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 667px)
 {
     .selections {
         width: 80%;
@@ -55,7 +55,7 @@ a:hover {
         display: flex;
         position: absolute;
         top: 83px;
-        left: 74px;
+        left: 72px;
         justify-content: center;
         align-items: center;
         font-size: 30px;
@@ -71,3 +71,18 @@ a:hover {
     }
 
 }
+
+@media only screen and (min-width: 414px) and (max-width: 895px) 
+{
+   .category-select {
+        left: 100px;
+   }
+}
+
+@media only screen and (min-width: 390px) and (max-width: 844px) 
+{
+   .category-select {
+        left: 80px;
+   }
+}
+
