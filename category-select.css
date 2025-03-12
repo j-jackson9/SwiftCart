@@ -40,8 +40,8 @@ a:hover {
 }
 
 
-@media only screen and (max-width: 667px)
-{
+/* Small devices (phones) */
+@media only screen and (max-width: 667px) {
     .selections {
         width: 80%;
     }
@@ -55,13 +55,13 @@ a:hover {
         display: flex;
         position: absolute;
         top: 83px;
-        left: 72px;
+        left: 72px;  
         justify-content: center;
         align-items: center;
         font-size: 30px;
         font-family: 'Oswald';
         border-radius: 25px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
         border: none;
         padding: 5px;
     }
@@ -69,20 +69,35 @@ a:hover {
     h1 {
         font-size: 60px !important;
     }
-
 }
 
-@media only screen and (min-width: 414px) and (max-width: 895px) 
-{
-   .category-select {
-        left: 100px;
-   }
+/* Medium devices (tablets) */
+@media only screen and (min-width: 400px) and (max-width: 896px) {
+    .category-select {
+        left: 90px;
+    }
 }
 
-@media only screen and (min-width: 390px) and (max-width: 844px) 
-{
-   .category-select {
-        left: 80px;
-   }
+
+/* Target iPhone 12 Pro (390px x 844px) */
+@media only screen and (width: 390px) and (height: 844px) {
+    .category-select {
+        left: 80px !important;
+    }
 }
+
+/* Target iPhone 14 Pro Max (430px x 932px) */
+@media only screen and (width: 430px) and (height: 932px) {
+    .category-select {
+        left: 100px !important;
+    }
+}
+
+/* Target Samsung Galaxy S8+ (360px x 740px) */
+@media only screen and (width: 360px) and (height: 740px) {
+    .category-select {
+        left: 65px !important;
+    }
+}
+
 
