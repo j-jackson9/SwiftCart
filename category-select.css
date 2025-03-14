@@ -100,4 +100,14 @@ a:hover {
     }
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .selections {
+        width: 75%;
+    }
+
+    .category li {
+        font-size: 20px;
+    }
+}
+
 

@@ -174,3 +174,40 @@ header {
      }
 
     }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px)
+    {
+        header {
+            width: 90%;
+        }
+
+        .title {
+            font-size: 40px;
+        }
+
+        .logo {
+            height: 45px;
+            width: 90px;
+        }
+
+        .fa-s, .fa-c, .fa-truck-fast {
+            font-size: 25px;
+         }
+
+         .fa-cart-shopping {
+            font-size: 55px;
+         }
+
+         .cart-indicator {
+            top: -20px;
+            font-size: 20px;
+         }
+
+         .cart-badge {
+            top: -10px;
+            left: 45px;
+            font-size: 17px;
+            width: 25px;
+            height: 25px;
+         }
+    }
