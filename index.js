@@ -11,8 +11,21 @@ for (let button of addToCart) {
         totalCartItems += quantity;
         cart.innerHTML = totalCartItems;
         alert(`Added ${quantity} item(s) to your cart!`);
-    });
-}
+
+            let img = document.querySelector('.item img');
+            let name = document.querySelector('.name');
+            let price = document.querySelector('.price');
+        
+            let item = {
+                image: img.src,
+                name: name.innerText,
+                price: price.innerText
+            };
+        
+            localStorage.setItem('item', JSON.stringify(item));
+            let storedItem = JSON.parse(localStorage.getItem('item'));
+        } );
+};
 
 let quantityInputs = document.getElementsByClassName('quantity');
 for (let input of quantityInputs) {
@@ -27,3 +40,14 @@ for (let input of quantityInputs) {
     });
 }
 
+
+function displayCart() {
+    let storedItem = JSON.parse(localStorage.getItem('item'));
+    let cartItem = document.createElement('div');
+    cartItem.innerHTML = `
+        <img src="${storedItem.image}" alt="item">
+        <p>${storedItem.name}</p>
+        <p>${storedItem.price}</p>
+    `;
+    document.getElementsByClassName('cart-items')[0].appendChild(cartItem);
+}
