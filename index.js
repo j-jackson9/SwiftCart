@@ -4,12 +4,6 @@ let cartTotal = parseInt(itemCount.innerHTML) || 0;
 let itemQuantity = document.querySelector('.quantity');
 
 
-
-
-
-
-
-
 addToCartBtn.forEach(btn => {
     btn.addEventListener('click', () => {
         alert('Item(s) added to cart');
@@ -26,19 +20,19 @@ addToCartBtn.forEach(btn => {
 
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        let item = [
+        let item = 
             {
                 img: btn.closest('.item').querySelector('img').src,
                 name: btn.closest('.item').querySelector('.name').innerHTML,
                 price: btn.closest('.item').querySelector('.price').innerHTML,
-            }
-        ];
+            };
+        
 
         cart.push(item);
 
-        localStorage.setItem('item', JSON.stringify(cart));
+        localStorage.setItem('cart', JSON.stringify(cart));
 
-        console.log(item);
+        console.log(cart);
     });
 });
 
@@ -56,6 +50,7 @@ function displayCart() {
             <div>
                 <h3>${item.name}</h3>
                 <p>${item.price}</p>
+                <button class="remove-item">Remove</button>
             </div>
         `;
         cartItems.appendChild(cartItem);
