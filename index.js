@@ -1,8 +1,6 @@
 let addToCartBtn = document.querySelectorAll('.add-to-cart');
 let itemCount = document.querySelector('.cart-badge');
 let cartTotal = parseInt(itemCount.innerHTML) || 0;
-let itemQuantity = document.querySelector('.quantity');
-
 
 addToCartBtn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -10,7 +8,7 @@ addToCartBtn.forEach(btn => {
          // Get the quantity from the specific input field next to the clicked button
         let itemQuantity = btn.previousElementSibling.querySelector('.quantity');
         // Convert the quantity from a string to a number
-        let quantity = parseInt(itemQuantity.value) || 1;
+        let quantity = itemQuantity ? parseInt(itemQuantity.value) || 1 : 1; // Add null check
         // Add the quantity to the cart
         cartTotal += quantity;
         // Update the cart total
@@ -25,10 +23,18 @@ addToCartBtn.forEach(btn => {
                 img: btn.closest('.item').querySelector('img').src,
                 name: btn.closest('.item').querySelector('.name').innerHTML,
                 price: btn.closest('.item').querySelector('.price').innerHTML,
+                quantity: quantity,
             };
         
-
-        cart.push(item);
+        // Check if the item already exists in the cart
+        let existingItem = cart.find(cartItem => cartItem.name === item.name);
+        if (existingItem) {
+            // Update the quantity of the existing item
+            existingItem.quantity += item.quantity;
+        } else {
+            // Add the new item to the cart
+            cart.push(item);
+        }
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
@@ -50,6 +56,7 @@ function displayCart() {
             <div>
                 <h3>${item.name}</h3>
                 <p>${item.price}</p>
+                <p>Quantity: ${item.quantity}</p>
                 <button class="remove-item">Remove</button>
             </div>
         `;
