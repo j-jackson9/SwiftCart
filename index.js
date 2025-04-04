@@ -16,8 +16,11 @@ addToCartBtn.forEach(btn => {
         // Reset the quantity input field
         console.log(itemCount.innerHTML);
 
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        localStorage.setItem('cartTotal', cartTotal);
 
+      
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
         let item = 
             {
                 img: btn.closest('.item').querySelector('img').src,
@@ -62,4 +65,9 @@ function displayCart() {
         `;
         cartItems.appendChild(cartItem);
     });
+
+    let cartTotal = localStorage.getItem('cartTotal') || 0;
+    let totalDisplay = document.querySelector('.cart-badge');
+    totalDisplay.innerHTML = cartTotal;
 }
+
