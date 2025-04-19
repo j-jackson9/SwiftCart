@@ -1,6 +1,9 @@
 let addToCartBtn = document.querySelectorAll('.add-to-cart');
 let itemCount = document.querySelector('.cart-badge');
-let cartTotal = parseInt(itemCount.innerHTML) || 0;
+
+// Initialize cartTotal from localStorage
+let cartTotal = parseInt(localStorage.getItem('cartTotal')) || 0;
+itemCount.innerHTML = cartTotal; // Update the cart badge on page load
 
 addToCartBtn.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -69,5 +72,42 @@ function displayCart() {
     let cartTotal = localStorage.getItem('cartTotal') || 0;
     let totalDisplay = document.querySelector('.cart-badge');
     totalDisplay.innerHTML = cartTotal;
-}
 
+
+let removeFromCartBtn = document.querySelectorAll('.remove-item');
+
+removeFromCartBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Correctly get the parent cart item DOM element
+        let cartItem = btn.closest('.cart-item');
+
+        // Get the name from the <h3> inside the cart item
+        let itemName = cartItem.querySelector('h3').innerHTML;
+
+        // Find the index of the item in the cart array
+        let itemIndex = cart.findIndex(item => item.name === itemName);
+        if (itemIndex !== -1) {
+            // Remove from cart array
+            cart.splice(itemIndex, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Remove from DOM
+            cartItem.remove();
+
+            // Update cart total
+            let cartTotal = parseInt(localStorage.getItem('cartTotal')) || 0;
+            cartTotal = Math.max(0, cartTotal - 1);
+            localStorage.setItem('cartTotal', cartTotal);
+
+            // Update cart badge
+            let totalDisplay = document.querySelector('.cart-badge');
+            totalDisplay.innerHTML = cartTotal;
+
+            displayCart(); // Refresh the cart display
+
+            alert('Item removed from cart');
+        }
+    });
+})};
