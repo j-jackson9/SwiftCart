@@ -65,3 +65,14 @@
    background-color: red;
 }
 
+.cart-item .quantity {
+    width: 130px; 
+    border-radius: 10px;
+    padding: 5px;
+    font-family: 'Oswald';
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.7); 
+    border: none;
+    margin-top: 5px;
+}

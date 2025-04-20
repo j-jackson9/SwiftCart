@@ -63,6 +63,7 @@ function displayCart() {
                 <h3>${item.name}</h3>
                 <p>${item.price}</p>
                 <p>Quantity: ${item.quantity}</p>
+                <input type="number" class="quantity" value="${item.quantity}" min="1" max="10">
                 <button class="remove-item">Remove</button>
             </div>
         `;
@@ -86,28 +87,45 @@ removeFromCartBtn.forEach(btn => {
         // Get the name from the <h3> inside the cart item
         let itemName = cartItem.querySelector('h3').innerHTML;
 
-        // Find the index of the item in the cart array
-        let itemIndex = cart.findIndex(item => item.name === itemName);
-        if (itemIndex !== -1) {
-            // Remove from cart array
-            cart.splice(itemIndex, 1);
-            localStorage.setItem('cart', JSON.stringify(cart));
+        // Find the item in the cart array
+        let existingItem = cart.find(item => item.name === itemName);
+        
+        if (existingItem) {
+            // Get the quantity to remove from the input field
+            let quantityToRemove = parseInt(cartItem.querySelector('.quantity').value) || 1;
 
-            // Remove from DOM
-            cartItem.remove();
+            // Decrement the quantity of the item
+            existingItem.quantity -= quantityToRemove;
 
             // Update cart total
             let cartTotal = parseInt(localStorage.getItem('cartTotal')) || 0;
-            cartTotal = Math.max(0, cartTotal - 1);
+            cartTotal = Math.max(0, cartTotal - quantityToRemove);
             localStorage.setItem('cartTotal', cartTotal);
 
             // Update cart badge
             let totalDisplay = document.querySelector('.cart-badge');
             totalDisplay.innerHTML = cartTotal;
 
+            if (existingItem.quantity <= 0) {
+                // Remove the item from the cart array if quantity is 0 or less
+                cart = cart.filter(item => item.name !== itemName);
+
+                // Remove from DOM
+                cartItem.remove();
+            } else {
+                // Update the quantity in the DOM
+                cartItem.querySelector('.quantity').value = existingItem.quantity;
+            }
+
+            // Save the updated cart to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
             displayCart(); // Refresh the cart display
 
-            alert('Item removed from cart');
+            alert('Item updated in cart');
         }
     });
-})};
+});
+}
+
+//localStorage.clear(); 
