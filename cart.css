@@ -24,11 +24,11 @@
 }
 
 .cart-item img {
-    width: 120px; /* Bigger image */
+    width: 120px; 
     height: 120px;
     object-fit: cover;
     border-radius: 10px;
-    margin-right: 20px; /* More spacing */
+    margin-right: 20px; 
 }
 
 .cart-item div {
@@ -38,7 +38,7 @@
 
 .cart-item h3 {
     margin: 0;
-    font-size: 26px; /* Much bigger product name */
+    font-size: 26px; 
     font-weight: bold;
     color: #222;
 }
