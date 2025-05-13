@@ -1,0 +1,89 @@
+.about-us {
+    font-family: 'Oswald';
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    background-color: #0165E1;
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.about {
+    font-family: 'Oswald';
+    font-size: 100px;
+    color: #0165E1;
+    text-align: center;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 600px;
+}
+
+.contact {
+     font-family: 'Oswald';
+    font-size: 100px;
+    color: #0165E1;
+    text-align: center;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+    font-weight: 600px;
+}
+
+.social-media {
+    font-size: 100px
+}
+
+.contact-us {
+    font-family: 'Oswald';
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+
+}
+.fa-heart {
+    color: red;
+    margin-right: 5px;
+    margin-left: 5px;
+   
+}
+
+.fa-envelope {
+    color: #0165E1;
+    margin-right: 5px;
+}
+
+.fa-phone {
+    color: goldenrod;
+    margin-right: 5px;
+}
+
+.fa-map-pin {
+    color: red;
+    margin-right: 5px;
+}
+
+.fa-facebook {
+    color: #43609c;
+}
+
+.fa-instagram {
+    color: #833ab4;
+}
+
+.fa-tiktok {
+    color: #FE2C55
+}
+
+.fa-twitter:hover {
+    color: black;
+}
+
+.footer {
+    font-family: 'Oswald';
+    font-size: 15px;
+    color: black;
+    text-align: center;
+    font-weight: 600;
+}
