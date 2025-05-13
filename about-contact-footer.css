@@ -15,14 +15,14 @@
 .about {
     font-family: 'Oswald';
     font-size: 100px;
-    color: #0165E1;
+    color: white;
     text-align: center;
     text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
     font-weight: 600px;
 }
 
 .contact {
-     font-family: 'Oswald';
+    font-family: 'Oswald';
     font-size: 100px;
     color: #0165E1;
     text-align: center;
@@ -81,9 +81,46 @@
 }
 
 .footer {
+    display: flex;
     font-family: 'Oswald';
     font-size: 15px;
     color: black;
-    text-align: center;
+   justify-content: center;
+    align-items: center;
     font-weight: 600;
+    background-color: lightgray;
+    width: 100%;
+    line-height: 3px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 607px) {
+    .about-us {
+        font-size: 20px;
+        margin-top: 1500px
+    }
+    .about {
+        font-size: 20px;
+    }
+    .contact {
+        font-size: 50px;
+    }
+    .contact-us {
+        font-size: 18px;
+    }
+
+    .social-media {
+        font-size: 50px;
+    }
+
+    .footer {
+        display: flex;
+        font-size: 12px;
+        background-color: lightgray;
+        border: none;
+        border-radius: 0px;
+        width: 100%;
+    }
 }
