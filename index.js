@@ -54,9 +54,11 @@ function displayCart() {
 
     cartItems.innerHTML = '';
 
+    let totalCartPrice = document.querySelector('.cart-price-total');
     cart.forEach(item => {
         let cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
+
         cartItem.innerHTML = `
             <img src="${item.img}" alt="">
             <div>
@@ -65,10 +67,17 @@ function displayCart() {
                 <p>Quantity: ${item.quantity}</p>
                 <input type="number" class="quantity" value="${item.quantity}" min="1" max="10">
                 <button class="remove-item">Remove</button>
-            </div>
         `;
         cartItems.appendChild(cartItem);
     });
+
+    // Calculate and update the total price of all items in the cart
+    let total = cart.reduce((sum, item) => {
+        let price = parseFloat(item.price.replace(/[^0-9.]/g, '')) || 0;
+        return sum + price * item.quantity;
+    }, 0);
+
+    totalCartPrice.innerHTML = `Total: $${total.toFixed(2)}`;
 
     let cartTotal = localStorage.getItem('cartTotal') || 0;
     let totalDisplay = document.querySelector('.cart-badge');
