@@ -89,4 +89,5 @@
     font-weight: 600;
     margin: 20px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
 }
